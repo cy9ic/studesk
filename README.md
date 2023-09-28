@@ -1,0 +1,2 @@
+# studesk
+Student managment app
