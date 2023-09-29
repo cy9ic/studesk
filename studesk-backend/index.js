@@ -1,0 +1,74 @@
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express"
+import express from "express"
+import * as dotenv from 'dotenv';
+import bodyParser from "body-parser";
+import cors from "cors"
+dotenv.config();
+
+const app = express();
+
+
+//  Middleware
+const swaggerOptions = 
+{
+    swaggerDefinition:{
+        info:{
+            title:"Studesk Api",
+            description:"Api made for studesk (2023 Full Stack project G-11)",
+            contact:{
+                name:"Harkaran",
+                email:"harkaran0010@gmail.com"
+            },
+            servers:["http://localhost:4000"]
+        }
+
+    }, 
+    apis:[ "routes/*.js" , "index.js"]
+};
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
+app.use("/api-docs" , swaggerUi.serve , swaggerUi.setup(swaggerDocs));
+app.use(bodyParser.json());
+app.use(cors())
+
+//Connecting to database
+import "./config/db.js"  
+
+
+// Define routes
+import { studentsRouter } from './routes/students.js';
+// import { facultyRouter } from './routes/faculty.js';
+// import { coursesRouter } from './routes/courses.js';
+// import { announcementsRouter } from './routes/announcements.js';
+// import { usersRouter } from './routes/users.js';
+
+
+
+app.use('/students', studentsRouter);
+// app.use('/faculty', facultyRouter);
+// app.use('/courses', coursesRouter);
+// app.use('/announcements', announcementsRouter);
+// app.use('/users', usersRouter);
+
+/**
+ * @swagger
+ * /cut:
+ *   get:
+ *      description : Testing the swagger
+ *      responses :
+ *        '200':
+ *          description: A successfull response
+ *      
+ *         */
+app.get("/cut" , (req , res )=>{
+    res.send("Done")
+})
+
+app.get("/" , (req , res)=>{
+    res.send("Working")
+})
+app.listen(process.env.PORT, ()=>{
+    console.log("Serve is Working")
+
+    
+})
