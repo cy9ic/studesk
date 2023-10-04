@@ -52,12 +52,12 @@ app.use('/students', studentsRouter);
 
 /**
  * @swagger
- * /cut:
+ * /student:
  *   get:
- *      description : Testing the swagger
+ *      description : Get the json object containing all the students in the database
  *      responses :
  *        '200':
- *          description: A successfull response
+ *          description: Got the list of all the Students
  *      
  *         */
 app.get("/cut" , (req , res )=>{
