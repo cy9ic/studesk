@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const studentSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
-    email: String,
-    password: String,
     dateOfBirth: Date,
+    class:String,       
+    email:String,
     enrolledCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }]
 });
 

@@ -37,7 +37,8 @@ import "./config/db.js"
 
 // Define routes
 import { studentsRouter } from './routes/students.js';
-// import { facultyRouter } from './routes/faculty.js';
+import { facultyRouter } from "./routes/facultyroute.js";
+import { UserRoute } from "./routes/userroute.js";
 // import { coursesRouter } from './routes/courses.js';
 // import { announcementsRouter } from './routes/announcements.js';
 // import { usersRouter } from './routes/users.js';
@@ -45,6 +46,8 @@ import { studentsRouter } from './routes/students.js';
 
 
 app.use('/students', studentsRouter);
+app.use('/faculty' ,facultyRouter)
+app.use('/user' , UserRoute)
 // app.use('/faculty', facultyRouter);
 // app.use('/courses', coursesRouter);
 // app.use('/announcements', announcementsRouter);
@@ -61,14 +64,13 @@ app.use('/students', studentsRouter);
  *      
  *         */
 app.get("/cut" , (req , res )=>{
-    res.send("Done")
+    res.send("Done");
 })
 
 app.get("/" , (req , res)=>{
     res.send("Working")
 })
 app.listen(process.env.PORT, ()=>{
-    console.log("Serve is Working")
-
+    console.log("Server is Working")
     
 })
