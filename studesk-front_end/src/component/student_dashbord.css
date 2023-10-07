@@ -1,0 +1,56 @@
+.btn:hover {
+    background-color: rgb(60, 174, 121)
+}
+
+/* Default button style */
+.custom-btn {
+    padding: 10px 20px;
+    /* Default size */
+}
+
+.cards {
+    height: 7rem;
+    background-color: hsl(0, 0%, 96%);
+
+
+
+
+}
+
+.cards:hover {
+    background-color: #3cae79;
+    color: white;
+}
+
+.top {
+    top: -3rem;
+}
+
+/* Media query for small screens */
+@media (max-width: 1310px) {
+
+    .custom-btn {
+        /* padding: 3px 8px; Smaller size for small screens */
+        width: 10rem;
+        font-size: 1rem;
+        margin: 5px;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .cards {
+        height: 5rem;
+        margin-top: 20px;
+    }
+}
+
+/* Media query for large screens */
+@media (min-width: 1310px) {
+    .custom-btn {
+        /* padding: 6px 30px; Larger size for large screens */
+        width: 15rem;
+        font-size: 1rem;
+    }
+}
