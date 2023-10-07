@@ -15,7 +15,7 @@ const swaggerOptions =
     swaggerDefinition:{
         info:{
             title:"Studesk Api",
-            description:"Api made for studesk (2023 Full Stack project G-11)",
+            description:"Api made for studesk (2023 Full Stack project G-11 - Chitkara University)",
             contact:{
                 name:"Harkaran",
                 email:"harkaran0010@gmail.com"
@@ -39,6 +39,7 @@ import "./config/db.js"
 import { studentsRouter } from './routes/students.js';
 import { facultyRouter } from "./routes/facultyroute.js";
 import { UserRoute } from "./routes/userroute.js";
+import {MarksRouter} from "./routes/marksroute.js"
 // import { coursesRouter } from './routes/courses.js';
 // import { announcementsRouter } from './routes/announcements.js';
 // import { usersRouter } from './routes/users.js';
@@ -48,6 +49,7 @@ import { UserRoute } from "./routes/userroute.js";
 app.use('/students', studentsRouter);
 app.use('/faculty' ,facultyRouter)
 app.use('/user' , UserRoute)
+app.use('/marks',MarksRouter)
 // app.use('/faculty', facultyRouter);
 // app.use('/courses', coursesRouter);
 // app.use('/announcements', announcementsRouter);
