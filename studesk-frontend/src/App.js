@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginSignup from './components/loginSignup/LoginSignup';
 
 function App() {
   return (
-   <>
-   <h1>Hello World!</h1>
-   </>
+    <div >
+      <LoginSignup />
+    </div>
   );
 }
 
