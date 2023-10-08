@@ -1,0 +1,70 @@
+body{
+    background: rgba(128, 128, 128, 0.14);
+}
+.news-container {
+
+    width: 33%;
+    
+    /* border: 1px solid gray; */
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #fff;
+    /* height: 350px; */
+}
+.calendar{
+    display: inline;
+    margin: 0px ;
+
+}
+ 
+
+.heading {
+    color: #0d0c22db;
+    width: 90%;
+    padding: 10px 24px;
+    
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+
+.news-list {
+    
+    list-style-type: none;
+    padding: 0px;
+    width: 100%;
+}
+
+
+.news-item {
+    background-color: white;
+    
+    padding: 10px 15px;
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.68);
+}
+
+.calendar{
+    width: 33%;
+    background: #fff;
+    padding: 10px 24px;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+.calendar-head{
+    color: #0d0c22db;
+    width: 90%;
+    padding: 10px 24px;
+    
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
