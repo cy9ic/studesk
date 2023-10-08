@@ -34,8 +34,8 @@ function Linechart(props)
     );
 
     return(<React.Fragment>
-        <div className='container-fluid mt-3 mb-3'>
-           <h2>Attedence</h2>          
+        <div className='container-fluid mt-3 mb-3 pl-0'>
+           <h2>Attendance</h2>          
           <Chart type='line'
           width={props.width}
           height={props.height}
