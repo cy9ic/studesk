@@ -25,11 +25,11 @@ const  LoginSignup = () => {
 
   function handleSubmit(event){
     event.prevDefault()
-    console.log(formData)
+    // console.log(formData)
   }
-  console.log(formData)
+  // console.log(formData)
   return (
-    <div className='container'>
+    <div className='container-login'>
       <div className='header'>
         <div className='text'>{action}</div>
         <div className='underline'></div>
@@ -77,7 +77,7 @@ const  LoginSignup = () => {
           value={formData.role}
           onChange={handleChange}
           >
-            <option value="student">Student</option>
+            <option value="student" >Student</option>
             <option value="faculty">Faculty</option>
             <option value="admin">Admin</option>
           </select>
