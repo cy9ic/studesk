@@ -116,7 +116,7 @@ const  LoginSignup = (props) => {
           value={formData.role}
           onChange={handleChange}
           >
-            <option value="student">Student</option>
+            <option value="student" >Student</option>
             <option value="faculty">Faculty</option>
             <option value="admin">Admin</option>
           </select>

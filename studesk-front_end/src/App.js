@@ -1,5 +1,17 @@
 import Navbar from './component/navbar'
 import './App.css';
+
+
+import Announcement from './component/Announcement'; 
+import Calendar from './component/Calendar'
+import {Route,Routes} from "react-router-dom"
+// import {
+//   BrowserRouter as Router,
+//  Routes,
+//   Route,
+//   Link
+// } from "react-router-dom";
+
 import {  useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -13,6 +25,7 @@ import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
 
 
+
 function App() {
   const[email,setEmail]=useState();
   const getEmail = (data) => {
@@ -20,6 +33,7 @@ function App() {
   };
 
   return (
+
  <>
 
         <Router>
@@ -50,6 +64,7 @@ function App() {
         </>
 
   
+
   );
 }
 
