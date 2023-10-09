@@ -1,6 +1,11 @@
 .btn:hover {
     background-color: rgb(60, 174, 121)
 }
+.color{color: #3cae79;
+
+
+}
+
 
 /* Default button style */
 .custom-btn {
@@ -8,22 +13,32 @@
     /* Default size */
 }
 
-.cards {
+.cards  {
     height: 7rem;
-    background-color: hsl(0, 0%, 96%);
+    background-color: #f5f5f5;
 
 
 
 
 }
 
+
+.cards:hover i{
+
+    color: white;
+}
 .cards:hover {
+    
     background-color: #3cae79;
     color: white;
 }
 
+
 .top {
     top: -3rem;
+}
+.font-size{
+    font-size: 1.5rem;
 }
 
 /* Media query for small screens */
@@ -44,13 +59,25 @@
         height: 5rem;
         margin-top: 20px;
     }
+    .font-size{
+        font-size: 0.5rem;
+        justify-content: center;
+    }
 }
-
+@media (min-width:998px){
+    .font-size{
+        font-size: 0.9rem;
+    }
+}
 /* Media query for large screens */
 @media (min-width: 1310px) {
     .custom-btn {
         /* padding: 6px 30px; Larger size for large screens */
         width: 15rem;
         font-size: 1rem;
+    }
+    .font-size{
+        font-size: 1.2rem;
+        
     }
 }
