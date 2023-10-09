@@ -20,7 +20,7 @@ const swaggerOptions =
                 name:"Harkaran",
                 email:"harkaran0010@gmail.com"
             },
-            servers:["http://localhost:4000"]
+            servers:["http://localhost:4000","https://wild-rose-deer-kilt.cyclic.app"]
         }
 
     }, 

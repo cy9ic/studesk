@@ -3,6 +3,11 @@ body{
 }
 .news-container {
 
+<<<<<<< HEAD:studesk-front_end/src/component/Announcement.css
+=======
+    /* width: 33%; */
+    
+>>>>>>> 9675b5b2e89ca32368d05e5aaabdab7d593a5f7f:studesk-front_end/src/component/Announcement/Announcement.css
     /* border: 1px solid gray; */
     /* box-sizing: border-box; */
     border-radius: 10px;

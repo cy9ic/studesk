@@ -1,6 +1,6 @@
 import React from 'react';
 import './Announcement.css';
-import newImg from './assets/latest-news-blink-img.gif'
+import newImg from '../assets/latest-news-blink-img.gif'
 const Announcements = () => {
     const news=['what are you great at?'
     ,'my name is wakanda',
