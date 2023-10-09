@@ -21,21 +21,26 @@ function Linechart(props)
 
     const[option]= useState(
         {
-            title:{ text:""},
+            chart:{
+                background:'#FFFFFF'
+              },
+            title:{ text:"Attendence",
+            style: {
+                fontSize: 30,
+
+              }},
             xaxis:{
-                title:{text:""},
+                tickPlacement: 'on',
                 categories:['1 week','2 week','3 week','4 week','5 week','6 week','7 week','8 week','9 week','10 week']
             },
-            yaxis:{
-                title:{text:""}                 
-            }
+          
 
         }
     );
 
     return(<React.Fragment>
-        <div className='container-fluid mt-3 mb-3'>
-           <h2>Attedence</h2>          
+        <div className='container-fluid '>
+                    
           <Chart type='line'
           width={props.width}
           height={props.height}

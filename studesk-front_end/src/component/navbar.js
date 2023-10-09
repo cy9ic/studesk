@@ -24,7 +24,7 @@ export default class navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Hoveranchor text="Dashboard" type="active" />
+                  <Hoveranchor text="Dashboard" link="/StudentDashboard" type="active" />
                 </li>
                 <li className="nav-item">
                   <Hoveranchor text="Profile Management" />
