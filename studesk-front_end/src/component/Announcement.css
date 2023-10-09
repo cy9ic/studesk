@@ -3,20 +3,13 @@ body{
 }
 .news-container {
 
-    width: 33%;
-    
     /* border: 1px solid gray; */
-    box-sizing: border-box;
-    border-radius: 8px;
+    /* box-sizing: border-box; */
+    border-radius: 10px;
     background: #fff;
     /* height: 350px; */
 }
-.calendar{
-    display: inline;
-    margin: 0px ;
 
-}
- 
 
 .heading {
     color: #0d0c22db;
@@ -44,17 +37,18 @@ body{
 .news-item {
     background-color: white;
     
-    padding: 10px 15px;
+    padding: 10px 16px;
     border-bottom: 0.5px solid rgba(128, 128, 128, 0.68);
 }
 
 .calendar{
-    width: 33%;
+    width: 100%;
     background: #fff;
     padding: 10px 24px;
     border-radius: 10px;
-    padding: 0px;
+    margin: 8px;
 }
+
 
 .calendar-head{
     color: #0d0c22db;
