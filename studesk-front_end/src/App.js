@@ -36,10 +36,9 @@ function App() {
           </Routes>
           
         </Router>
+        </>
 
-
-
-  </>
+  
   );
 }
 
