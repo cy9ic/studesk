@@ -129,7 +129,7 @@ export default function Studentdashboard(props) {
           <Linegraph width="100%" height="200%" />
           </div>
         <div className='container  mt-2 col-sm-12 col-lg-4'>
-          <Bargraph width="100%" height="200%" DSA={userMarks.DSA} FEE={userMarks.FEE} NALR={userMarks.NALR} VES={userMarks.VES} DBMS={userMarks.DBMS} />
+          <Bargraph width="100%" height="200%" DSA={userMarks.DSA} FEE={userMarks.FEE} NALR={userMarks.NALR} VES={userMarks.VES} DBMS={userMarks.PA} />
           </div>
 
       </div>
