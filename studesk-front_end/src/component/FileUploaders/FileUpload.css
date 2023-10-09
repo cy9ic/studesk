@@ -1,0 +1,12 @@
+.upload-box {
+    border: 2px dashed #3cae79;
+    background-color: #f0f0f0;
+    text-align: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .upload-box.highlight {
+    background-color: #d8e4ff;
+  }
+  

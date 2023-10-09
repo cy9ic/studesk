@@ -29,7 +29,7 @@ const  LoginSignup = () => {
   }
   console.log(formData)
   return (
-    <div className='container-login'>
+    <div className='container'>
       <div className='header'>
         <div className='text'>{action}</div>
         <div className='underline'></div>

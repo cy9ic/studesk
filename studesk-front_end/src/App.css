@@ -39,6 +39,5 @@
 
 .my{
   display: flex;
-  column-gap: 400px;
-  margin-left: 100px;
+  gap: 15px;
 }
