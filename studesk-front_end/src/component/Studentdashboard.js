@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Announcements from './Announcement/Announcement';
 import Bargraph from './bargraph';
 import Linegraph from './linegraph';
+import Calendar from './Calendar/Calendar'
 import './student_dashbord.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 export default function Studentdashboard(props) {
   const email = props.email;
@@ -124,7 +126,7 @@ export default function Studentdashboard(props) {
         </div>
 
       </div>
-      <div className=' row border  '>
+      <div className=' row  '>
         <div className=' container  mt-2 col-sm-12 col-lg-8 ' >
           <Linegraph width="100%" height="200%" />
           </div>
@@ -133,6 +135,18 @@ export default function Studentdashboard(props) {
           </div>
 
       </div>
+      <div className=' row  m-1  '>
+        <div className=' container   mt-2 col-sm-12 col-lg-8 ' >
+       <Announcements/>
+          </div>
+        
+        
+        <div className=' container  mt-2 col-sm-12 col-lg-4 ' >
+       <Calendar/>
+          </div>
+        
+      </div>
+     
 
     </div>
 
