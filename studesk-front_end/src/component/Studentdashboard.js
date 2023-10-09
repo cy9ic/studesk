@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 export default function Studentdashboard(props) {
   const email = props.email;
-  console.log(email);
   const [userMarks, setuserMarks] = useState({
     "DSA": 0,
     "FEE": 0,

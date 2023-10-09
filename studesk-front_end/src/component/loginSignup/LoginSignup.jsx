@@ -6,7 +6,7 @@ import email_icon from '../assets/email.png'
 import password_icon from '../assets/password.png'
 import { useNavigate } from 'react-router-dom'
 
-const  LoginSignup = () => {
+const  LoginSignup = (props) => {
   const history = useNavigate();
   const [action,setAction]=useState("Sign Up")
   const [formData,setFormData]=useState({
@@ -59,6 +59,7 @@ const  LoginSignup = () => {
     (res)=>{
       console.log("Successfully Authenticated");
       console.log(res);
+      props.getEmail(formData.email);
       history("/StudentDashboard")
     },(res)=>{
       console.log("Email or password not found");
