@@ -1,33 +1,71 @@
 import React, { useState } from 'react'
 import './LoginSignup.css'
-
+import axios from "axios"
 import user_icon from '../assets/person.png'
 import email_icon from '../assets/email.png'
 import password_icon from '../assets/password.png'
-
+import { useNavigate } from 'react-router-dom'
 
 const  LoginSignup = () => {
+  const history = useNavigate();
   const [action,setAction]=useState("Sign Up")
   const [formData,setFormData]=useState({
     name:"",
     email:"",
     password:"",
     role:""
-
   })
+
   function handleChange(event){
     const {name,value,type}=event.target
     setFormData(prevFormData=>({
       ...prevFormData,
       [name]:value
-    }))
-  }
 
-  function handleSubmit(event){
-    event.prevDefault()
+    }))
     console.log(formData)
   }
-  console.log(formData)
+
+
+  const handleSignUp =  async ()=>{
+    if(action==="Login"){
+      setAction("Sign Up");
+      return;
+    }
+    console.log(formData);
+    await axios.post("https://wild-rose-deer-kilt.cyclic.app/user/create",formData)
+    .then(
+      (res)=>{
+        console.log("The User is successfully Created!");
+        console.log(res);
+      },
+      (res)=>{
+        console.log("There was an error");
+          console.log(res);
+      }
+    )
+  }
+
+  const handleSignIn= async ()=>{
+
+    if(action==="Sign Up"){
+      setAction("Login");
+      return;
+    }
+   await axios.post("https://wild-rose-deer-kilt.cyclic.app/user/authenticate",{
+      email:formData.email,
+      password:formData.password
+  }).then(
+    (res)=>{
+      console.log("Successfully Authenticated");
+      console.log(res);
+      history("/StudentDashboard")
+    },(res)=>{
+      console.log("Email or password not found");
+      console.log(res);
+    }
+  )
+  }
   return (
     <div className='container-login'>
       <div className='header'>
@@ -89,8 +127,8 @@ const  LoginSignup = () => {
       </div>
       
       <div className="submit-container">
-        <div className={action==="Login"?"submit gray":"submit"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
-        <div className={action==="Sign Up"?"submit gray":"submit"} onClick={()=>{setAction("Login")}}>Login</div>
+        <div className={action==="Login"?"submit gray":"submit"} onClick={handleSignUp}>Sign Up</div>
+        <div className={action==="Sign Up"?"submit gray":"submit"} onClick={handleSignIn}>Login</div>
       </div>
       
     </div>
