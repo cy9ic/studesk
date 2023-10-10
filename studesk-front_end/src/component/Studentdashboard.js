@@ -56,7 +56,7 @@ export default function Studentdashboard(props) {
 
         </div>
         <div className='  col-8   d-flex align-items-center justify-content-end' style={{ backgroundColor: "#0d0c22" }}>
-          <div >
+          {/* <div >
 
 
             <button className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ backgroundColor: "#2f2e48"}}>
@@ -82,7 +82,7 @@ export default function Studentdashboard(props) {
             </ul>
 
 
-          </div>
+          </div> */}
         </div>
 
       </div>
@@ -92,7 +92,7 @@ export default function Studentdashboard(props) {
           <div className='col-3 '>
             <div className='container-fluid d-flex justify-content-center align-items-center row cards rounded-3'>
               <div className='col-12 d-flex justify-content-center col-lg-2 '><i class="bi bi-file-earmark-text-fill fs-1 color"> </i></div>
-              <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><a class="navbar-brand text-wrap m-0" href="/">Upload Documents</a></div>
+              <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><Link to={"/GradeCard"} className='navbar-brand text-wrap m-0'>Grade Card</Link></div>
             </div>
           </div>
           <div className='col-3 '>
