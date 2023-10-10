@@ -5,6 +5,7 @@ import Announcements from './Announcement/Announcement';
 import Bargraph from './bargraph';
 import Linegraph from './linegraph';
 import Calendar from './Calendar/Calendar'
+import Alert from './Alert'
 import './student_dashbord.css';
 
 export default function Studentdashboard(props) {
@@ -57,7 +58,7 @@ export default function Studentdashboard(props) {
           </div>
 
         </div>
-        <div className='  col-8   d-flex align-items-center justify-content-end' style={{ backgroundColor: "#0d0c22" }}>
+        {/* <div className='  col-8   d-flex align-items-center justify-content-end' style={{ backgroundColor: "#0d0c22" }}> */}
           {/* <div >
 
 
@@ -91,7 +92,7 @@ export default function Studentdashboard(props) {
 
 
           </div> */}
-        </div>
+        {/* </div> */}
 
       </div>
       <div className='container  position-relative z-1 top' >
@@ -100,7 +101,7 @@ export default function Studentdashboard(props) {
           <div className='col-3 '>
             <div className='container-fluid d-flex justify-content-center align-items-center row cards rounded-3'>
               <div className='col-12 d-flex justify-content-center col-lg-2 '><i class="bi bi-file-earmark-text-fill fs-1 color"> </i></div>
-              <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><Link to={"/GradeCard"} className='navbar-brand text-wrap m-0'>Grade Card</Link></div>
+              <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><Link to={"/GradeCard"} className='navbar-brand text-wrap m-0'>Grade Info</Link></div>
             </div>
           </div>
           <div className='col-3 '>
@@ -134,11 +135,13 @@ export default function Studentdashboard(props) {
           </div>
 
       </div>
-      <div className=' row  m-1  '>
-        <div className=' container   mt-2 col-sm-12 col-lg-8 ' >
+      <div className=' row border'>
+        <div className=' container mt-2 col-sm-12 col-lg-5 ' >
        <Announcements/>
           </div>
-        
+        <div className=' container mt-2 col-sm-12 col-lg-3 ' >
+       <Alert />
+          </div>
         
         <div className=' container  mt-2 col-sm-12 col-lg-4 ' >
        <Calendar/>

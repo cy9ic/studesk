@@ -42,7 +42,7 @@ const GradeCard = () => {
 
   return (
     <div className="student-grade-details">
-      <h1>Student Grade Details</h1>
+      <h1>Student Grade Info</h1>
       <table border="1">
         <thead>
           <tr>

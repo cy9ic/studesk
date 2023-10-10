@@ -3,18 +3,23 @@ body{
 }
 .news-container {
 
-<<<<<<< HEAD:studesk-front_end/src/component/Announcement.css
-=======
     /* width: 33%; */
     
->>>>>>> 9675b5b2e89ca32368d05e5aaabdab7d593a5f7f:studesk-front_end/src/component/Announcement/Announcement.css
     /* border: 1px solid gray; */
     /* box-sizing: border-box; */
     border-radius: 10px;
     background: #fff;
     /* height: 350px; */
+    height: 100%;
 }
-
+.alert-list{
+  color: red;
+  list-style: none;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 70px;
+}
 
 .heading {
     color: #0d0c22db;
@@ -49,12 +54,43 @@ body{
 .calendar{
     width: 100%;
     background: #fff;
-    padding: 10px 24px;
+    /* padding: 10px 24px; */
     border-radius: 10px;
-    margin: 8px;
+    /* margin: 8px; */
 }
 
-
+.calendar {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .calendar {
+      max-width: 100%;
+    }
+    .alert-list{
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .calendar {
+      max-width: 800px;
+    }
+    .alert-list{
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .calendar {
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  }
+  
 .calendar-head{
     color: #0d0c22db;
     width: 90%;
@@ -67,3 +103,4 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
