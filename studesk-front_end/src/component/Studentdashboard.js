@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Announcements from './Announcement/Announcement';
 import Bargraph from './bargraph';
 import Linegraph from './linegraph';
 import Calendar from './Calendar/Calendar'
@@ -58,41 +57,35 @@ export default function Studentdashboard(props) {
           </div>
 
         </div>
-        {/* <div className='  col-8   d-flex align-items-center justify-content-end' style={{ backgroundColor: "#0d0c22" }}> */}
-          {/* <div >
+        <div className='  col-8   d-flex align-items-center justify-content-end' style={{ backgroundColor: "#0d0c22" }}>
+          <div >
 
 
-            <button className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              All classes
+            <button className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ backgroundColor: "#2f2e48"}}>
+              Course
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href='/'>Action</a></li>
-              <li><a className="dropdown-item" href='/'>Another action</a></li>
-              <li><a className="dropdown-item" href='/'>Something else here</a></li>
+              <li><a className="dropdown-item" href='/'>CSE-3rd year</a></li>
             </ul>
 
 
-            <button className="btn btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Last 30 days
+            <button className="btn btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: "#2f2e48"}}>
+              Mentor
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href='/'>Action</a></li>
-              <li><a className="dropdown-item" href='/'>Another action</a></li>
-              <li><a className="dropdown-item" href='/'>Something else here</a></li>
+              Dr.Sunil Kumar Chawla
             </ul>
 
-            <button className="btn btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Filter
+            <button className="btn btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: "#2f2e48"}}>
+             Group
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href='/'>Action</a></li>
-              <li><a className="dropdown-item" href='/'>Another action</a></li>
-              <li><a className="dropdown-item" href='/'>Something else here</a></li>
+              <li><a className="dropdown-item" href='/'>G-11</a></li>
             </ul>
 
 
-          </div> */}
-        {/* </div> */}
+          </div>
+         </div>
 
       </div>
       <div className='container  position-relative z-1 top' >
