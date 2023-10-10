@@ -5,6 +5,7 @@ import Bargraph from './bargraph';
 import Linegraph from './linegraph';
 import Calendar from './Calendar/Calendar'
 import Alert from './Alert'
+import Announcements from './Announcement/Announcement'
 import './student_dashbord.css';
 
 export default function Studentdashboard(props) {
