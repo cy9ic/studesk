@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Hoveranchor from './hoveranchor'
+import { Link } from 'react-router-dom'
 
 export default class navbar extends Component {
 
@@ -33,18 +34,16 @@ export default class navbar extends Component {
                   <Hoveranchor text="Admin" type="disabled" />
                 </li>
               </ul>
-              <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              </form>
+
               <ul className="navbar-nav">
                 <li className="nav-item dropdown stay-visible">
                   <a className="nav-link dropdown-toggle" href='/' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src={this.props.profile_url} width="40" height="40" alt='Profile' className="rounded-circle" />
                   </a>
                   <ul className="dropdown-menu dropdown-menu-end">
-                    <li><a className="dropdown-item" href='/'>Dashboard</a></li>
-                    <li><a className="dropdown-item" href='/'>Edit Profile</a></li>
-                    <li><a className="dropdown-item" href='/'>Log Out</a></li>
+                    {/* <li><a className="dropdown-item" href='/'>Dashboard</a></li> */}
+                    <li><Link to={'/StudentDashboard'} className='dropdown-item'>Dashboard</Link></li>
+                    <li><Link to={'/'} className='dropdown-item'>Log Out</Link></li>
                   </ul>
                 </li>
               </ul>

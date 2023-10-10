@@ -11,8 +11,6 @@ import StudentDashboard from './component/Studentdashboard';
 import FileUploader from './component/FileUploaders/FileUpload';
 import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
-import Announcement from './component/Announcement'; 
-import Calendar from './component/Calendar'
 
 
 
