@@ -12,11 +12,8 @@ import StudentDashboard from './component/Studentdashboard';
 import FileUploader from './component/FileUploaders/FileUpload';
 import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
-<<<<<<< HEAD
 
-=======
 import GradeCard from './component/GradeCard';
->>>>>>> aba33f1de4fdba7ec2f84c4d152976742590724c
 
 
 function App() {

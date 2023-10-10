@@ -56,7 +56,7 @@ export default function Studentdashboard(props) {
 
         </div>
         <div className='  col-8   d-flex align-items-center justify-content-end' style={{ backgroundColor: "#0d0c22" }}>
-          {/* <div >
+          <div >
 
 
             <button className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ backgroundColor: "#2f2e48"}}>
@@ -82,7 +82,7 @@ export default function Studentdashboard(props) {
             </ul>
 
 
-          </div> */}
+          </div>
         </div>
 
       </div>
