@@ -24,7 +24,7 @@ function Linechart(props)
             chart:{
                 background:'#FFFFFF'
               },
-            title:{ text:"Attendence",
+            title:{ text:"Attendance",
             style: {
                 fontSize: 30,
 

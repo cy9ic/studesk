@@ -44,6 +44,7 @@ export default class navbar extends Component {
                     {/* <li><a className="dropdown-item" href='/'>Dashboard</a></li> */}
                     <li><Link to={'/StudentDashboard'} className='dropdown-item'>Dashboard</Link></li>
                     <li><Link to={'/'} className='dropdown-item'>Log Out</Link></li>
+                    <li><Link to={'/FacultyDashboard'} className='dropdown-item'>Faculty Dashboard</Link></li>
                   </ul>
                 </li>
               </ul>

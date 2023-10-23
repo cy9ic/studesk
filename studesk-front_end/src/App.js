@@ -12,6 +12,7 @@ import StudentDashboard from './component/Studentdashboard';
 import FileUploader from './component/FileUploaders/FileUpload';
 import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
+import FacultyDashboard from './FacultyDashboard';
 
 import GradeCard from './component/GradeCard';
 
@@ -50,6 +51,9 @@ function App() {
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>
+            </>}></Route>
+            <Route path='/FacultyDashboard' element={<><Navbar profile_url={noUser}/>
+            <FacultyDashboard name="teacher" email={`${email}`} profile_url={noUser}/>
             </>}></Route>
           </Routes>
           

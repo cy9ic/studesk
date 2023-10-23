@@ -55,12 +55,16 @@ const LoginSignup = (props) => {
       const response = await axios.post('https://wild-rose-deer-kilt.cyclic.app/user/authenticate', {
         email: formData.email,
         password: formData.password,
+        role: formData.role,
       });
 
       console.log('Successfully Authenticated');
       console.log(response);
       props.getEmail(formData.email);
       history('/StudentDashboard');
+        
+        
+      
     } catch (error) {
       console.error('Email or password not found', error);
       setErrorMessage('User not found'); // Set the error message
