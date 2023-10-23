@@ -26,6 +26,7 @@ function App() {
     setEmail(data);
   };
 const [GatePassSubmit , setSubmit] = useState(false);
+const [role , setRole] = useState("");
 
 const gatePassSubmit = ()=>{
   setSubmit(true);
@@ -42,11 +43,12 @@ const submittedData = (data)=>{
 
           <Routes>
             <Route path='/' element={
-              <LoginSignup getEmail={getEmail}></LoginSignup>
+              <LoginSignup fun={setRole} getEmail={getEmail}></LoginSignup>
             }></Route>
             <Route path='/StudentDashboard'  element={<>
             <Navbar profile_url={noUser}/>
-            <StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>
+            
+            {role=="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard/>}
             </>}/>
             <Route path='/uploadDocuments'  element={<>
               <Navbar profile_url={noUser}/>

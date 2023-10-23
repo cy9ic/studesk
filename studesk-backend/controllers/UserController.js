@@ -25,7 +25,7 @@ export const authenticateUser = async(req , res)=>{
             if(!isPassword){
                 return res.status(401).json({error:'Invalid email or password'});
             }
-            res.json({message:"Authentication succesfull" , email});
+            res.json({message:"Authentication succesfull" , user});
         
         }catch(error){
             console.error(error);

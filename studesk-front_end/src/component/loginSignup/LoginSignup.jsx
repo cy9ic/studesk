@@ -52,17 +52,25 @@ const LoginSignup = (props) => {
     }
 
     try {
-      const response = await axios.post('https://wild-rose-deer-kilt.cyclic.app/user/authenticate', {
+      // const response = await axios.post('https://wild-rose-deer-kilt.cyclic.app/user/authenticate', {
+      //   email: formData.email,
+      //   password: formData.password,
+      //   role: formData.role,
+      // }).then(res=>{
+      //   console.log(res);
+      // });
+       await axios.post('http://localhost:4000/user/authenticate', {
         email: formData.email,
         password: formData.password,
         role: formData.role,
+      }).then(res=>{
+        console.log(res);
+        props.fun(res.data.user.role);
       });
 
       console.log('Successfully Authenticated');
-      console.log(response);
       props.getEmail(formData.email);
       history('/StudentDashboard');
-        
         
       
     } catch (error) {
