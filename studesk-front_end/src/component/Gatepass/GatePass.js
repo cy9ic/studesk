@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 const GatePass = (props) => {
   const [formData, setFormData] = useState({
     studentName: '',

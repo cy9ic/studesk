@@ -16,6 +16,7 @@ import FacultyDashboard from './FacultyDashboard';
 
 import GradeCard from './component/GradeCard';
 import GatepassS from './component/gatepass_submitted/Submit_gatepass';
+import FacultyGatePass from './component/faculty_gate_pass/facultygp.js';
 
 
 function App() {
@@ -64,6 +65,13 @@ const submittedData = (data)=>{
             </>}></Route>
             <Route path='/FacultyDashboard' element={<><Navbar profile_url={noUser}/>
             <FacultyDashboard name="teacher" email={`${email}`} profile_url={noUser}/>
+            </>}></Route>
+
+            <Route path='/req' element={<>
+              <Navbar profile_url={noUser}/>
+              <FacultyGatePass/>
+              
+              
             </>}></Route>
           </Routes>
         </Router>
