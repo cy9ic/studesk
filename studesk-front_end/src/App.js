@@ -14,14 +14,24 @@ import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
 
 import GradeCard from './component/GradeCard';
+import GatepassS from './component/gatepass_submitted/Submit_gatepass';
 
 
 function App() {
   const[email,setEmail]=useState();
+  
   const getEmail = (data) => {
     setEmail(data);
   };
+const [GatePassSubmit , setSubmit] = useState(false);
 
+const gatePassSubmit = ()=>{
+  setSubmit(true);
+}
+const [gatePassData , setData ] = useState([]);
+const submittedData = (data)=>{
+    setData(data);
+}
   return (
  <>
 
@@ -44,15 +54,15 @@ function App() {
             <Route path='/gatePass'  element={
             <>
               <Navbar profile_url={noUser}/>
-            <GatePass/>
+              {GatePassSubmit ? <GatepassS data={gatePassData}  /> : <GatePass func={gatePassSubmit} data={submittedData} />}
             </>
             }></Route>
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>
             </>}></Route>
+
           </Routes>
-          
         </Router>
         </>
 
