@@ -24,16 +24,21 @@ const LoginSignup = (props) => {
       [name]: value,
     }));
   }
-
   const handleSignUp = async () => {
     if (action === 'Login') {
       setAction('Sign Up');
       return;
     }
-
+  
+    // Check if the name field is empty
+    if (formData.name.trim() === '') {
+      setErrorMessage('Name is required');
+      return;
+    }
+  
     try {
       const response = await axios.post('https://wild-rose-deer-kilt.cyclic.app/user/create', formData);
-      console.log('The User is successfully Created!');
+      alert('The User is successfully Created!');
       console.log(response);
     } catch (error) {
       console.error('There was an error', error);
@@ -82,6 +87,7 @@ const LoginSignup = (props) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              
             />
           </div>
         )}
@@ -135,12 +141,12 @@ const LoginSignup = (props) => {
     )}
 
       <div className="submit-container">
-        <div className={action === 'Login' ? 'submit gray' : 'submit'} onClick={handleSignUp}>
+        <button type='button' className={action === 'Login' ? 'submit gray' : 'submit'} onClick={handleSignUp} disabled={!formData.name || !formData.email || !formData.password}>
           Sign Up
-        </div>
-        <div className={action === 'Sign Up' ? 'submit gray' : 'submit'} onClick={handleSignIn}>
+        </button>
+        <button type='button' className={action === 'Sign Up' ? 'submit gray' : 'submit'} onClick={handleSignIn}>
           Login
-        </div>
+        </button>
       </div>
     </div>
   );
