@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import Faculty_Announcements from './Faculty_Announcements';
+
 const FacultyDashboard = (props) => {
     const email=props.email;
-
   return (
     <div className='container-fluid'>
         <div className='row border-top z-0 ' style={{ height: '15rem' ,backgroundColor: "#0d0c22"}}>
@@ -17,8 +17,6 @@ const FacultyDashboard = (props) => {
               <p className='mb-0 mt-1'>Hello Faculty!</p>
               <p style={{ color: '#ffffffb3' }}>We hope you're having a great day.</p>
             </div>
-
-
           </div>
 
         </div>
@@ -26,7 +24,7 @@ const FacultyDashboard = (props) => {
           <div >
 
 
-            <button className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ backgroundColor: "#2f2e48"}}>
+            <button onSubmit={()=>{}} className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ backgroundColor: "#2f2e48"}}>
               Subject
             </button>
             <ul className="dropdown-menu">

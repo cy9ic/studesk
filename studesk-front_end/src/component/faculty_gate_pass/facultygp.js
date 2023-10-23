@@ -2,28 +2,36 @@ import React, { useEffect, useState } from 'react'
 import "./gatepasslist.css"
 import axios from 'axios';
 
-
-
-export default function FacultyGatePass() {
+export default function FacultyGatePass(props) {
     const [data , setData] = useState([]);
+    const [clas, setclas] = useState("")
+
+    const getdata =async ()=>{
+
+        await axios.get("http://localhost:4000/faculty/email" , {email:props.email}).
+        then(res=>{
+            console.log(res);
+            setclas(res.data.class);
+        })
+    }
+    
 
     useEffect(()=>{
+        const d = getdata();
         axios.get("http://localhost:4000/gatepass/StudentsInClass" ,{params:{
             class:"3A"
         }}).
         then(res=>{
             const sdata = res.data;
             const approvedvalues = sdata.filter(item => item.GatePass[item.GatePass.length -1].approved == null);
-            // console.log(approvedvalues);
-            
             const table = document.getElementById('table-list')
-           approvedvalues.forEach(item=>{
+            approvedvalues.forEach(item=>{
             const tr = document.createElement('tr');
             tr.innerHTML = `
-            <td>${item.GatePass[item.GatePass.length-1].data.StudentID}</td>
-            <td>${item.GatePass[item.GatePass.length-1].data.StudentName}</td>
-            <td>Today To Tommorow</td>
-            <td>${item.GatePass[item.GatePass.length-1].data.Reason}</td>
+            <td>${item.GatePass[item.GatePass.length-1].data.studentID}</td>
+            <td>${item.GatePass[item.GatePass.length-1].data.studentName}</td>
+            <td>${item.GatePass[item.GatePass.length-1].data.fromDate} to ${item.GatePass[item.GatePass.length-1].data.toDate}</td>
+            <td>${item.GatePass[item.GatePass.length-1].data.purpose}</td>
             <td>Approval</td>
         `;
         table.appendChild(tr);

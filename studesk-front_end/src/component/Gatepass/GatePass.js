@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 const GatePass = (props) => {
+
   const [formData, setFormData] = useState({
     studentName: '',
     studentID: '',
@@ -18,13 +20,14 @@ const GatePass = (props) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
     // Implement the form submission logic here, such as sending data to a server.
     props.func();
     props.data(formData);
-
-    console.log('Form Data:', formData);
+    await axios.post("http://localhost:4000/gatepass/create",{email:props.email ,data:formData})
+    .then(res=>{console.log(res)})
+    .catch(error=>console.log(error));
   };
 
   return (

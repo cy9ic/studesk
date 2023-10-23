@@ -17,7 +17,7 @@ export const getAllFaculty = async (req , res  )=>{
 //Get a specific Faculty By Id
 export const getFacultyById = async(req , res)=>{
     try{
-        const faculty = await Faculty.findById(req.params.id);
+        const faculty = await Faculty.findOne(req.body.email);
         if(!faculty){
             return res.status(404).json({message :"Faculty not found "})
         }

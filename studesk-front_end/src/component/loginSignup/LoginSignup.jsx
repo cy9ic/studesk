@@ -71,7 +71,6 @@ const LoginSignup = (props) => {
       console.log('Successfully Authenticated');
       props.getEmail(formData.email);
       history('/StudentDashboard');
-        
       
     } catch (error) {
       console.error('Email or password not found', error);
