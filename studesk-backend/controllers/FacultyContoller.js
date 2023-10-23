@@ -1,4 +1,5 @@
 import Faculty from "../models/faculty.js";
+import Student from "../models/student.js";
 
 //Get all the faculty
 export const getAllFaculty = async (req , res  )=>{
@@ -68,3 +69,5 @@ export const delFacultyById = async (req , res)=>{
         res.status(500).json({ message: error.message });
     }
 }
+
+

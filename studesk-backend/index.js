@@ -40,6 +40,7 @@ import { studentsRouter } from './routes/students.js';
 import { facultyRouter } from "./routes/facultyroute.js";
 import { UserRoute } from "./routes/userroute.js";
 import {MarksRouter} from "./routes/marksroute.js"
+import {gprouter}  from "./routes/gatepassroute.js"
 // import { coursesRouter } from './routes/courses.js';
 // import { announcementsRouter } from './routes/announcements.js';
 // import { usersRouter } from './routes/users.js';
@@ -47,9 +48,10 @@ import {MarksRouter} from "./routes/marksroute.js"
 
 
 app.use('/students', studentsRouter);
-app.use('/faculty' ,facultyRouter)
-app.use('/user' , UserRoute)
-app.use('/marks',MarksRouter)
+app.use('/faculty' ,facultyRouter);
+app.use('/user' , UserRoute);
+app.use('/marks',MarksRouter);
+app.use('/gatepass' , gprouter);
 // app.use('/faculty', facultyRouter);
 // app.use('/courses', coursesRouter);
 // app.use('/announcements', announcementsRouter);
