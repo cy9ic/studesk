@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const GatePass = () => {
+const GatePass = (props) => {
   const [formData, setFormData] = useState({
     studentName: '',
     studentID: '',
@@ -22,6 +22,9 @@ const GatePass = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Implement the form submission logic here, such as sending data to a server.
+    props.func();
+    props.data(formData);
+
     console.log('Form Data:', formData);
   };
 

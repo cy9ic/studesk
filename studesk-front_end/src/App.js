@@ -15,14 +15,24 @@ import GatePass from './component/Gatepass/GatePass';
 import FacultyDashboard from './FacultyDashboard';
 
 import GradeCard from './component/GradeCard';
+import GatepassS from './component/gatepass_submitted/Submit_gatepass';
 
 
 function App() {
   const[email,setEmail]=useState();
+  
   const getEmail = (data) => {
     setEmail(data);
   };
+const [GatePassSubmit , setSubmit] = useState(false);
 
+const gatePassSubmit = ()=>{
+  setSubmit(true);
+}
+const [gatePassData , setData ] = useState([]);
+const submittedData = (data)=>{
+    setData(data);
+}
   return (
  <>
 
@@ -45,7 +55,7 @@ function App() {
             <Route path='/gatePass'  element={
             <>
               <Navbar profile_url={noUser}/>
-            <GatePass/>
+              {GatePassSubmit ? <GatepassS data={gatePassData}  /> : <GatePass func={gatePassSubmit} data={submittedData} />}
             </>
             }></Route>
             <Route path='/GradeCard'  element={<>
@@ -56,7 +66,6 @@ function App() {
             <FacultyDashboard name="teacher" email={`${email}`} profile_url={noUser}/>
             </>}></Route>
           </Routes>
-          
         </Router>
         </>
 

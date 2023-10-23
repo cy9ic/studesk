@@ -1,0 +1,81 @@
+.sh1{
+    margin-top: 4rem;
+
+}
+.u-icon{
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+    border: solid black 2px;
+    padding: 5px;
+    border-radius: 100px;
+
+}
+
+.s-container{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: rgb(216, 213, 213);
+    border: solid black 2px;
+    border-radius: 10%;
+    width: 500px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+.profile-p{
+    
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.s-title{
+    display: flex;
+    justify-content: center;
+    
+     /* text-align: center; */
+}
+
+.id-phone{
+    padding-top: 10px;
+    display: flex;
+    gap: 100px;
+    margin-left: 50px;
+    font-weight: 700;
+}
+.phone-c{
+    display: flex;
+    margin-left: auto;
+    padding-right: 50px;
+    
+}
+
+.r-title{
+    font-weight: 600;
+
+}
+
+.reason-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(232, 230, 230);
+    
+    align-items: center;
+    row-gap: 10px;
+    margin-top: auto;
+    
+
+}
+
+.date-c{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    align-items: center;
+}
