@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import Faculty_Announcements from './Faculty_Announcements';
-import MarksManagement from './MarksManagement';
+// import MarksManagement from './MarksManagement';
 import StudentList from './StudentList';
-
+import StudentDetails from './StudentDetails';
 
 const FacultyDashboard = (props) => {
     const email=props.email;
@@ -59,8 +59,8 @@ const FacultyDashboard = (props) => {
        <Faculty_Announcements/>
           </div>
         <div className=' container mt-2 col-sm-12 col-lg-6 ' >
-        <MarksManagement/>
-          </div>
+        <StudentDetails/>
+        </div>
         
       </div>
       <div className="row">

@@ -48,7 +48,7 @@ const submittedData = (data)=>{
             <Route path='/StudentDashboard'  element={<>
             <Navbar profile_url={noUser}/>
 
-            {role=="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard/>}
+            {role==="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard/>}
             </>}/>
             <Route path='/uploadDocuments'  element={<>
               <Navbar profile_url={noUser}/>
@@ -65,8 +65,16 @@ const submittedData = (data)=>{
             <Route path='FacultyGatePass' element={
               <FacultyGatePass email={email}></FacultyGatePass>
             }>
+              
 
             </Route>
+            <Route path='/StudentDashboard' element={
+              <>
+              <Navbar profile_url={noUser} />
+              <StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>
+              </>
+            }></Route>
+            
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>

@@ -91,19 +91,14 @@ export default function Studentdashboard(props) {
       </div>
       <div className='container  position-relative z-1 top' >
         <div className='row '>
-          
+          <div className="col-2"></div>
           <div className='col-3 '>
             <div className='container-fluid d-flex justify-content-center align-items-center row cards rounded-3'>
               <div className='col-12 d-flex justify-content-center col-lg-2 '><i className="bi bi-file-earmark-text-fill fs-1 color"> </i></div>
               <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><Link to={"/GradeCard"} className='navbar-brand text-wrap m-0'>Grade Info</Link></div>
             </div>
           </div>
-          <div className='col-3 '>
-            <div className='container-fluid d-flex justify-content-center align-items-center row cards rounded-3'>
-              <div className='col-12 d-flex justify-content-center col-lg-2 '><i className="bi bi-file-earmark-text-fill fs-1 color"> </i></div>
-              <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><a className="navbar-brand text-wrap m-0" href="/">Upload Documents</a></div>
-            </div>
-          </div>
+
           <div className='col-3 '>
             <div className='container-fluid d-flex justify-content-center align-items-center row cards rounded-3'>
               <div className='col-12 d-flex justify-content-center col-lg-2 '><i className="bi bi-person-vcard-fill fs-1 color"></i></div>
@@ -116,7 +111,7 @@ export default function Studentdashboard(props) {
               <div className='col-12 col-lg-10 d-flex  text-center font-size fw-bold ' ><Link to={"/uploadDocuments"} className='navbar-brand text-wrap m-0'>Upload Documents</Link></div>
             </div>
           </div>
-
+          <div className="col-1 5"></div>
         </div>
 
       </div>
