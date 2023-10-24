@@ -8,7 +8,7 @@ export default function FacultyGatePass(props) {
 
     const getdata =async ()=>{
 
-        await axios.get("http://localhost:4000/faculty/email" , {email:props.email}).
+        await axios.get("https://victorious-hare-beret.cyclic.app/faculty/email" , {email:props.email}).
         then(res=>{
             console.log(res);
             setclas(res.data.class);
@@ -18,7 +18,7 @@ export default function FacultyGatePass(props) {
 
     useEffect(()=>{
         const d = getdata();
-        axios.get("http://localhost:4000/gatepass/StudentsInClass" ,{params:{
+        axios.get("https://victorious-hare-beret.cyclic.app/gatepass/StudentsInClass" ,{params:{
             class:"3A"
         }}).
         then(res=>{

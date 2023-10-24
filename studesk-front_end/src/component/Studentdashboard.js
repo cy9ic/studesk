@@ -20,7 +20,7 @@ export default function Studentdashboard(props) {
   });
 
   useEffect(() => {
-    axios.get(`https://wild-rose-deer-kilt.cyclic.app/marks/${email}`)
+    axios.get(`https://victorious-hare-beret.cyclic.app/marks/${email}`)
       .then((response) => {
         setuserMarks(response.data);
       })
