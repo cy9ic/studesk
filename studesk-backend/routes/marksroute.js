@@ -21,15 +21,15 @@ import { getMarks , postMarks } from "../controllers/MarksController.js";
  *               email:
  *                 type: string
  *               DSA:
- *                 type: Number
+ *                 type: number
  *               FEE:
- *                 type: Number
+ *                 type: number
  *               NALR:
- *                 type: Number
+ *                 type: number
  *               VES:
- *                 type: Number
+ *                 type: number
  *               PA:
- *                 type: Number
+ *                 type: number
  *     responses:
  *       '201':
  *         description: Student marks posted successfully.
