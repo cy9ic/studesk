@@ -12,7 +12,7 @@ const options =  swaggerJSDoc.Options =
                 name:"Harkaran",
                 email:"harkaran0010@gmail.com"
             },
-            servers:["http://localhost:4000","https://wild-rose-deer-kilt.cyclic.app"]
+            servers:["http://localhost:4000","https://victorious-hare-beret.cyclic.app"]
         },
         components:{
             securitySchemas:{
@@ -36,7 +36,7 @@ app.use('/docs' , swaggerUi.serve  , swaggerUi.setup(swaggerSpec))
 app.get('docs.json' ,(req , res)=>{
     res.setHeader('Content-Type' ,'application/json');
     res.send(swaggerSpec)
-    log.info(`Docs available at http://localhost:${4000}/docs`)
+    log.info(`Docs available at https://victorious-hare-beret.cyclic.app/docs/`)
 })
 }
 
