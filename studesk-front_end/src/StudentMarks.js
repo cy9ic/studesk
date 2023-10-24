@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./StudentMarks.css";
-
+// import axios from "axios";
 const StudentMarks = ({ studentId, onClose }) => {
   const [marks, setMarks] = useState({
     DSA: "",
@@ -11,9 +11,8 @@ const StudentMarks = ({ studentId, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Save the student's marks to the database.
 
-    // Close the modal.
+
     onClose();
   };
 
