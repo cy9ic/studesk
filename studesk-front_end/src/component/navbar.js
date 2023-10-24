@@ -26,7 +26,7 @@ export default class navbar extends Component {
                   <Hoveranchor text="Dashboard" link="/StudentDashboard" type="active" />
                 </li>
                 <li className="nav-item">
-                  <Hoveranchor text="Profile Management" />
+                  <Hoveranchor text="Documentation" link='/Documentation' />
                 </li>
                 <li className="nav-item">
                   <Hoveranchor text="Admin" type="disabled" />

@@ -17,7 +17,7 @@ import FacultyDashboard from './FacultyDashboard';
 import GradeCard from './component/GradeCard';
 import GatepassS from './component/gatepass_submitted/Submit_gatepass';
 import FacultyGatePass from './component/faculty_gate_pass/facultygp.js';
-
+import Documentation from './component/Documentation/documentation';
 
 function App() {
   const[email,setEmail]=useState();
@@ -39,8 +39,7 @@ const submittedData = (data)=>{
  <>
 
         <Router>
-         
-
+          
           <Routes>
             <Route path='/' element={
               <LoginSignup fun={setRole} getEmail={getEmail}></LoginSignup>
@@ -57,12 +56,9 @@ const submittedData = (data)=>{
             <Route path='/gatePass'  element={
             <>
               <Navbar profile_url={noUser}/>
-              {role=="faculty"?<FacultyGatePass email={email}></FacultyGatePass>:GatePassSubmit ? <GatepassS  data={gatePassData}  /> : <GatePass func={gatePassSubmit} email={email}  data={submittedData} />}
-               
+              {role=="faculty"?<FacultyGatePass email={email}></FacultyGatePass>:GatePassSubmit ? <GatepassS  data={gatePassData}  /> : <GatePass func={gatePassSubmit} email={email}  data={submittedData} />}               
             </>
-            
             }></Route>
-            
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>
@@ -77,6 +73,12 @@ const submittedData = (data)=>{
               
               
             </>}></Route>
+            <Route path='/Documentation' element={
+              <>
+              <Navbar profile_url={noUser}/>
+              <Documentation/>
+              </>
+            }></Route>
           </Routes>
         </Router>
         </>

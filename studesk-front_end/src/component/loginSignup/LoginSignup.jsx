@@ -37,7 +37,7 @@ const LoginSignup = (props) => {
     }
   
     try {
-      const response = await axios.post('https://wild-rose-deer-kilt.cyclic.app/user/create', formData);
+      const response = await axios.post('https://victorious-hare-beret.cyclic.app/user/create', formData);
       alert('The User is successfully Created!');
       console.log(response);
     } catch (error) {
