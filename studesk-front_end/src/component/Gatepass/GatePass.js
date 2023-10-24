@@ -25,7 +25,7 @@ const GatePass = (props) => {
     // Implement the form submission logic here, such as sending data to a server.
     props.func();
     props.data(formData);
-    await axios.post("http://localhost:4000/gatepass/create",{email:props.email ,data:formData})
+    await axios.post("https://victorious-hare-beret.cyclic.app/gatepass/create",{email:props.email ,data:formData})
     .then(res=>{console.log(res)})
     .catch(error=>console.log(error));
   };

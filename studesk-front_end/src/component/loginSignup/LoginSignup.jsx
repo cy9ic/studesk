@@ -59,7 +59,7 @@ const LoginSignup = (props) => {
       // }).then(res=>{
       //   console.log(res);
       // });
-       await axios.post('http://localhost:4000/user/authenticate', {
+       await axios.post('https://victorious-hare-beret.cyclic.app/user/authenticate', {
         email: formData.email,
         password: formData.password,
         role: formData.role,
