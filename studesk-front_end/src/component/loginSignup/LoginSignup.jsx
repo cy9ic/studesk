@@ -39,6 +39,7 @@ const LoginSignup = (props) => {
     try {
       const response = await axios.post('https://victorious-hare-beret.cyclic.app/user/create', formData);
       alert('The User is successfully Created!');
+      
       console.log(response);
     } catch (error) {
       console.error('There was an error', error);
@@ -66,10 +67,12 @@ const LoginSignup = (props) => {
       }).then(res=>{
         console.log(res);
         props.fun(res.data.user.role);
+        window.localStorage.setItem("role" , res.data.user.role);
       });
 
       console.log('Successfully Authenticated');
       props.getEmail(formData.email);
+      window.localStorage.setItem("email",formData.email.toString());
       history('/StudentDashboard');
       
     } catch (error) {

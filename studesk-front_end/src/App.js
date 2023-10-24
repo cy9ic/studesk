@@ -1,7 +1,7 @@
 import Navbar from './component/navbar'
 import './App.css';
 import noUser from './component/assets/noUser.png'
-import {  useState } from 'react';
+import {  useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
  Routes,
@@ -28,6 +28,10 @@ function App() {
   };
 const [GatePassSubmit , setSubmit] = useState(false);
 const [role , setRole] = useState("");
+useEffect(()=>{
+  setEmail(window.localStorage.getItem("email"));
+  setRole(window.localStorage.getItem("role"));
+},)
 
 const gatePassSubmit = ()=>{
   setSubmit(true);
