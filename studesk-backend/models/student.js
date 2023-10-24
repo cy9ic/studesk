@@ -6,6 +6,7 @@ const studentSchema = new mongoose.Schema({
     dateOfBirth: Date,
     class:String,       
     email:String,
+    GatePass:Array,
     enrolledCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }]
 });
 

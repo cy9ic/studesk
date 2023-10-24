@@ -1,0 +1,39 @@
+.g-h{
+    margin-top: 25px;
+}
+
+body{
+    background-color: rgb(230, 225, 225);
+}
+.gp-container{
+    display: flex;
+    height: 1200px;
+    margin: auto;
+    border-radius: 5%;
+    width: 1200px;
+    background-color: white;
+    
+    
+}
+
+.grid-item{
+    padding: 20px;
+    padding-left: 50px;
+    height: fit-content;
+
+    background-color: rgb(134, 241, 134);
+    border: 1px solid black;
+}
+
+.table{
+    margin-top: 50px;
+}
+table{
+    width: 100%;
+    font-size: 20px;
+    
+}
+th ,td{
+    border: 1px solid black;
+    padding: 20px;
+}

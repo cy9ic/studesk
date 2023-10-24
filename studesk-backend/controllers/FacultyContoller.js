@@ -1,4 +1,5 @@
 import Faculty from "../models/faculty.js";
+import Student from "../models/student.js";
 
 //Get all the faculty
 export const getAllFaculty = async (req , res  )=>{
@@ -16,7 +17,7 @@ export const getAllFaculty = async (req , res  )=>{
 //Get a specific Faculty By Id
 export const getFacultyById = async(req , res)=>{
     try{
-        const faculty = await Faculty.findById(req.params.id);
+        const faculty = await Faculty.findOne({email : req.body.email});
         if(!faculty){
             return res.status(404).json({message :"Faculty not found "})
         }
@@ -32,7 +33,7 @@ export const createFaculty = async(req , res )=>{
     const faculty = new Faculty(req.body);
     try{
         const newFaculty = await faculty.save();
-        res.status(201).json(newFaculty);
+        res.status(201).json("Faculty Member created Successfully",newFaculty);
 
     }catch(error){
         res.status(400).json({message:error.message});
@@ -68,3 +69,5 @@ export const delFacultyById = async (req , res)=>{
         res.status(500).json({ message: error.message });
     }
 }
+
+

@@ -12,17 +12,33 @@ import StudentDashboard from './component/Studentdashboard';
 import FileUploader from './component/FileUploaders/FileUpload';
 import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
+import FacultyDashboard from './FacultyDashboard';
 
 import GradeCard from './component/GradeCard';
+<<<<<<< HEAD
 import TimeTable from './component/TimeTable';
+=======
+import GatepassS from './component/gatepass_submitted/Submit_gatepass';
+import FacultyGatePass from './component/faculty_gate_pass/facultygp.js';
+>>>>>>> a52aba46076e70bc710ee21b54711daa5b7eeb02
 
 
 function App() {
   const[email,setEmail]=useState();
+  
   const getEmail = (data) => {
     setEmail(data);
   };
+const [GatePassSubmit , setSubmit] = useState(false);
+const [role , setRole] = useState("");
 
+const gatePassSubmit = ()=>{
+  setSubmit(true);
+}
+const [gatePassData , setData ] = useState([]);
+const submittedData = (data)=>{
+    setData(data);
+}
   return (
  <>
 
@@ -31,11 +47,11 @@ function App() {
 
           <Routes>
             <Route path='/' element={
-              <LoginSignup getEmail={getEmail}></LoginSignup>
+              <LoginSignup fun={setRole} getEmail={getEmail}></LoginSignup>
             }></Route>
             <Route path='/StudentDashboard'  element={<>
             <Navbar profile_url={noUser}/>
-            <StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>
+            {role=="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard/>}
             </>}/>
             <Route path='/uploadDocuments'  element={<>
               <Navbar profile_url={noUser}/>
@@ -45,17 +61,34 @@ function App() {
             <Route path='/gatePass'  element={
             <>
               <Navbar profile_url={noUser}/>
-            <GatePass/>
+              {role=="faculty"?<FacultyGatePass email={email}></FacultyGatePass>:GatePassSubmit ? <GatepassS  data={gatePassData}  /> : <GatePass func={gatePassSubmit} email={email}  data={submittedData} />}
+               
             </>
+            
             }></Route>
+            
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>
             </>}></Route>
+<<<<<<< HEAD
             <Route path='/timeTable' element={<TimeTable/>}></Route>
           </Routes>
 
           
+=======
+            <Route path='/FacultyDashboard' element={<><Navbar profile_url={noUser}/>
+            <FacultyDashboard name="teacher" email={`${email}`} profile_url={noUser}/>
+            </>}></Route>
+
+            <Route path='/req' element={<>
+              <Navbar profile_url={noUser}/>
+              <FacultyGatePass/>
+              
+              
+            </>}></Route>
+          </Routes>
+>>>>>>> a52aba46076e70bc710ee21b54711daa5b7eeb02
         </Router>
         </>
 

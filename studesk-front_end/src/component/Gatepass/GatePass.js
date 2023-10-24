@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+const GatePass = (props) => {
 
-const GatePass = () => {
   const [formData, setFormData] = useState({
     studentName: '',
     studentID: '',
@@ -19,10 +20,14 @@ const GatePass = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
     // Implement the form submission logic here, such as sending data to a server.
-    console.log('Form Data:', formData);
+    props.func();
+    props.data(formData);
+    await axios.post("https://victorious-hare-beret.cyclic.app/gatepass/create",{email:props.email ,data:formData})
+    .then(res=>{console.log(res)})
+    .catch(error=>console.log(error));
   };
 
   return (

@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 import Hoveranchor from './hoveranchor'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 export default class navbar extends Component {
-
-
+  
+  
 
   render() {
     return (
       <div>
         <nav className="navbar navbar-sticky navbar-dark navbar-expand-lg " style={{ backgroundColor: "#0d0c22" }}>
-
-
-
           <div className="container-fluid">
             <a className="navbar-brand" href='/'>
               <img src="https://img.freepik.com/free-vector/international-student-day-banner-design_1308-117914.jpg?w=740&t=st=1696435322~exp=1696435922~hmac=6699271f6535708ed617ccc0977ac5fb56a0d63dd31db43bf1792ac7effe930b" alt="Bootstrap" width="50" height="50" className='rounded-circle' />
@@ -44,6 +42,7 @@ export default class navbar extends Component {
                     {/* <li><a className="dropdown-item" href='/'>Dashboard</a></li> */}
                     <li><Link to={'/StudentDashboard'} className='dropdown-item'>Dashboard</Link></li>
                     <li><Link to={'/'} className='dropdown-item'>Log Out</Link></li>
+                    <li><Link to={'/FacultyDashboard'} className='dropdown-item'>Faculty Dashboard</Link></li>
                   </ul>
                 </li>
               </ul>
