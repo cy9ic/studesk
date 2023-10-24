@@ -61,13 +61,6 @@ const LoginSignup = (props) => {
     }
 
     try {
-      // const response = await axios.post('https://wild-rose-deer-kilt.cyclic.app/user/authenticate', {
-      //   email: formData.email,
-      //   password: formData.password,
-      //   role: formData.role,
-      // }).then(res=>{
-      //   console.log(res);
-      // });
        await axios.post('https://victorious-hare-beret.cyclic.app/user/authenticate', {
         email: formData.email,
         password: formData.password,

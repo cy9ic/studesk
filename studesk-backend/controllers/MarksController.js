@@ -1,9 +1,8 @@
 import Marks from "../models/marks.js";
 
 export const getMarks = async (req , res)=>{
-    const email = req.params.id;
     
-    const Markss = await Marks.findOne({email});
+    const Markss = await Marks.findOne({email:req.body.email});
     try{
         if(!Markss){
             return res.status(404).json({message:"Student's Marks not Found!"});
