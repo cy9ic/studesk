@@ -15,7 +15,8 @@ import GatePass from './component/Gatepass/GatePass';
 import FacultyDashboard from './FacultyDashboard';
 
 import GradeCard from './component/GradeCard';
-import GatepassS from './component/gatepass_submitted/Submit_gatepass';
+import TimeTable from './component/TimeTable';
+import Gatepass from './component/gatepass_submitted/Submit_gatepass';
 import FacultyGatePass from './component/faculty_gate_pass/facultygp.js';
 import Documentation from './component/Documentation/documentation';
 
@@ -59,10 +60,27 @@ const submittedData = (data)=>{
               {role=="faculty"?<FacultyGatePass email={email}></FacultyGatePass>:GatePassSubmit ? <GatepassS  data={gatePassData}  /> : <GatePass func={gatePassSubmit} email={email}  data={submittedData} />}               
             </>
             }></Route>
+            <Route path='FacultyGatePass' element={
+              <FacultyGatePass email={email}></FacultyGatePass>
+            }>
+              
+
+            </Route>
+            <Route path='/StudentDashboard' element={
+              <>
+              <Navbar profile_url={noUser} />
+              <StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>
+              </>
+            }></Route>
+            
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>
             </>}></Route>
+            <Route path='/timeTable' element={<TimeTable/>}></Route>
+          
+
+          
             <Route path='/FacultyDashboard' element={<><Navbar profile_url={noUser}/>
             <FacultyDashboard name="teacher" email={`${email}`} profile_url={noUser}/>
             </>}></Route>

@@ -16,7 +16,7 @@ const MarksManagement = () => {
 
   return (
     <div>
-      <button onClick={openModal}>Add Marks</button>
+      <button onClick={openModal} style={{background:"#17794B",color:"white",borderRadius:"5px"}}>Add Marks</button>
       {modalIsOpen && <StudentMarks studentId={studentId} onClose={closeModal} />}
     </div>
   );
