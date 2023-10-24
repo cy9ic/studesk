@@ -6,6 +6,7 @@ const StudentDetails = () => {
   const [studentMail, setStudentMail] = useState([]); 
   const [studentDob, setStudentDob] = useState([]); 
   const [studentrollNo, setStudentRollNo] = useState([]); 
+  const [studentClass, setStudentClass] = useState([]); 
 
   useEffect(() => {
     const fetchStudentData = async () => {
@@ -15,6 +16,7 @@ const StudentDetails = () => {
         setStudentMail(response.data.map((student) => student.email)); 
         setStudentDob(response.data.map((student) => student.dateOfBirth || "2002-01-01")); 
         setStudentRollNo(response.data.map((student) => student.rollNo || "2110991879")); 
+        setStudentClass(response.data.map((student) => student.class || "3A")); 
       } catch (error) {
         console.error(error);
       }
@@ -24,9 +26,9 @@ const StudentDetails = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "white", padding: "10px", height: "300px" }}>
-      <h2 style={{ padding: "0px" }}>Student Details</h2>
-      <div className="details" style={{display:"flex",justifyContent:"space-evenly"}}>
+    <div style={{ backgroundColor: "white", padding: "10px", height: "300px",overflowY:"scroll" }}>
+      <h2 style={{ padding: "10px 0px" }}>Student Details</h2>
+      <div className="details" style={{padding:"15px",display:"flex",fontSize:"18px",justifyContent:"space-between"}}>
         <ul style={{ padding: "0px" }}>
             <h5>Name</h5>
             {studentNames.map((studentName, index) => (
@@ -56,6 +58,14 @@ const StudentDetails = () => {
             {studentrollNo.map((rollNo, index) => (
             <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
                 {rollNo}
+            </li>
+            ))}
+        </ul>
+        <ul style={{ padding: "0px" }}>
+            <h5>Class</h5>
+            {studentClass.map((clas, index) => (
+            <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
+                {clas}
             </li>
             ))}
         </ul>

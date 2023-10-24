@@ -20,7 +20,7 @@ const StudentList = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "white" ,padding:"10px",height:"300px"}}>
+    <div style={{ backgroundColor: "white" ,padding:"10px",height:"300px",overflowY:"scroll"}}>
       <h2 style={{padding:"0px"}}>Add Marks</h2>
       <ul style={{padding:"0px"}}>
         {studentNames.map((studentName, index) => (

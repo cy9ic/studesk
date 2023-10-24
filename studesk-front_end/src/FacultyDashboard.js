@@ -4,6 +4,8 @@ import Faculty_Announcements from './Faculty_Announcements';
 import StudentList from './StudentList';
 import StudentDetails from './StudentDetails';
 import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
 
 
 const FacultyDashboard = (props) => {
@@ -31,10 +33,10 @@ const FacultyDashboard = (props) => {
 
 
             <button onSubmit={()=>{}} className="btn  btn-secondary dropdown-toggle me-1 me-lg-5 custom-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{ backgroundColor: "#2f2e48"}}>
-              Subject
+              Accept Gate Pass
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item">CSE-3rd year</a></li>
+              <li><Link to={"/gatePass"} className='dropdown-item'>GatePass</Link></li>
             </ul>
 
 
@@ -49,7 +51,7 @@ const FacultyDashboard = (props) => {
              Group
             </button>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item">G-11</a></li>
+              <li><a className="dropdown-item">3A</a></li>
             </ul>
 
 
@@ -62,21 +64,20 @@ const FacultyDashboard = (props) => {
        <Faculty_Announcements/>
           </div>
         <div className=' container mt-2 col-sm-12 col-lg-6 ' >
-        <StudentDetails/>
+        <StudentList/>
         </div>
         
       </div>
       <div className="row">
-        <div className="container mt-2 col-sm-12 col-lg-6">
-          <StudentList/>
+        <div className="container mt-2 col-sm-12 col-lg-12">
+          <StudentDetails/>
         </div>
-        <div className="container mt-2 col-sm-12 col-lg-6">
-          <h1>testing</h1>
+     
         </div>
       </div>
 
 
-    </div>
+
   )
 }
 
