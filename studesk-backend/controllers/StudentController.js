@@ -16,7 +16,7 @@ export const createStudent = async (req, res) => {
     try {
         const newStudent = await student.save();
 
-        res.status(201).json(newStudent);
+        res.status(201).json("Student created successfully",newStudent);
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
