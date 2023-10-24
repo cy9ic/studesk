@@ -1,10 +1,9 @@
 import mongoose from "mongoose"
 
 const announcementSchema = new mongoose.Schema({
-    title: String,
     content: String,
-    author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    createdAt: { type: Date, default: Date.now }
+    class:String,
 });
 
-module.exports = mongoose.model('Announcement', announcementSchema);
+const Announcement= mongoose.model('Announcement', announcementSchema);
+export default Announcement;

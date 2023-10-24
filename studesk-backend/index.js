@@ -23,6 +23,7 @@ import { facultyRouter } from "./routes/facultyroute.js";
 import { UserRoute } from "./routes/userroute.js";
 import {MarksRouter} from "./routes/marksroute.js"
 import {gprouter}  from "./routes/gatepassroute.js"
+import announcementRouter from "./routes/announcementroute.js"
 
 
 
@@ -31,7 +32,7 @@ app.use('/faculty' ,facultyRouter);
 app.use('/user' , UserRoute);
 app.use('/marks',MarksRouter);
 app.use('/gatepass' , gprouter);
-
+app.use('/announcement' , announcementRouter);
 
 
 

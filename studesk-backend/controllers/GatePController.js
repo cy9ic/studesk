@@ -20,7 +20,6 @@ try{
     res.json(student);
     
 }catch(error){
-    console.error(error);
     res.status(500).json({ error: "Internal server error" });
 }
 }
