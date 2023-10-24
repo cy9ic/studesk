@@ -19,8 +19,10 @@ export default function Studentdashboard(props) {
     "DBMS": 0
   });
 
+axios.post("https://victorious-hare-beret.cyclic.app/announcement/getAllAnnouncement").then(res=>{})
+
   useEffect(() => {
-    axios.get(`https://victorious-hare-beret.cyclic.app/marks/${email}`)
+    axios.post(`https://victorious-hare-beret.cyclic.app/marks/getMarks` , {email:email})
       .then((response) => {
         setuserMarks(response.data);
       })
