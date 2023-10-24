@@ -1,6 +1,4 @@
-body{
-    background-color: black;
-}
+
 .temp{
     display: flex;
     margin-top: 20%;
@@ -11,10 +9,10 @@ padding: 50px;
 font-size: larger;
 font-weight: 600;
 border-radius: 80px;
-
+color: white;
 margin: auto;
-background-color :rgb(221, 216, 216);
-border: 5px solid white;
+background-color :black;
+border: 5px solid black;
 height: 100%;
 }
 

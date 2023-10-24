@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 export default function Documentation() {
   return (
     <>
+    
+      
+    
+    
     <div className='temp'>
 
     <button className='doc-btn' onClick={()=>{
@@ -14,6 +18,7 @@ export default function Documentation() {
     <button className='doc-btn'>Front-end Documentation</button>
     
     </div>
+
 
     </>
   )
