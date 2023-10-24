@@ -14,6 +14,7 @@ import LoginSignup from './component/loginSignup/LoginSignup';
 import GatePass from './component/Gatepass/GatePass';
 
 import GradeCard from './component/GradeCard';
+import TimeTable from './component/TimeTable';
 
 
 function App() {
@@ -51,7 +52,9 @@ function App() {
               <Navbar profile_url={noUser}/>
               <GradeCard/>
             </>}></Route>
+            <Route path='/timeTable' element={<TimeTable/>}></Route>
           </Routes>
+
           
         </Router>
         </>
