@@ -8,22 +8,22 @@ export default function FacultyGatePass(props) {
 
     const getdata =async ()=>{
 
-        await axios.get("https://victorious-hare-beret.cyclic.app/faculty/email" , {email:props.email}).
+        await axios.post("https://victorious-hare-beret.cyclic.app/faculty/email" , {email:props.email}).
         then(res=>{
-            console.log(res);
             setclas(res.data.class);
+            console.log("The teacher is :", res)
+        }).catch(error=>{
+            console.log(error);
         })
     }
-    
 
-    useEffect(()=>{
-        const d = getdata();
-        axios.get("https://victorious-hare-beret.cyclic.app/gatepass/StudentsInClass" ,{params:{
-            class:"3A"
-        }}).
+    const studentrender = async ()=>{
+        await axios.post("https://victorious-hare-beret.cyclic.app/gatepass/StudentsInClass" ,{class:"3A"}).
         then(res=>{
             const sdata = res.data;
-            const approvedvalues = sdata.filter(item => item.GatePass[item.GatePass.length -1].approved == null);
+            console.log(res);
+            
+            const approvedvalues = sdata.filter(item => item.GatePass.length>0 && item.GatePass[item.GatePass.length -1].approved == null);
             const table = document.getElementById('table-list')
             approvedvalues.forEach(item=>{
             const tr = document.createElement('tr');
@@ -40,6 +40,12 @@ export default function FacultyGatePass(props) {
         }).catch(error=>{
             console.log(error)
         })
+    }
+    
+
+    useEffect(()=>{
+        getdata();
+        studentrender();
     } , [])
 
 

@@ -59,6 +59,6 @@ import { PostGatePassReq  , approveGatePass, getAllStudentsFromHisClass} from ".
 
 
 gprouter.post('/create' , PostGatePassReq);
-gprouter.get("/StudentsInClass" ,getAllStudentsFromHisClass)
+gprouter.post("/StudentsInClass" ,getAllStudentsFromHisClass)
 gprouter.post("/approve" , approveGatePass);
 export {gprouter};

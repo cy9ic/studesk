@@ -30,7 +30,7 @@ export const getAllStudentsFromHisClass = async(req , res)=>{
     try{
         
         
-        const students =await  Student.find({class:req.query.class});
+        const students =await  Student.find({class:req.body.class});
         res.json(students);
     }catch(error){
         console.error(error);
