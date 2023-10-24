@@ -4,6 +4,8 @@ import axios from "axios";
 const StudentDetails = () => {
   const [studentNames, setStudentNames] = useState([]);
   const [studentMail, setStudentMail] = useState([]); 
+  const [studentDob, setStudentDob] = useState([]); 
+  const [studentrollNo, setStudentRollNo] = useState([]); 
 
   useEffect(() => {
     const fetchStudentData = async () => {
@@ -11,6 +13,8 @@ const StudentDetails = () => {
         const response = await axios.get("https://victorious-hare-beret.cyclic.app/Students");
         setStudentNames(response.data.map((student) => student.firstName + " " + student.lastName));
         setStudentMail(response.data.map((student) => student.email)); 
+        setStudentDob(response.data.map((student) => student.dateOfBirth || "2002-01-01")); 
+        setStudentRollNo(response.data.map((student) => student.rollNo || "2110991879")); 
       } catch (error) {
         console.error(error);
       }
@@ -24,6 +28,7 @@ const StudentDetails = () => {
       <h2 style={{ padding: "0px" }}>Student Details</h2>
       <div className="details" style={{display:"flex",justifyContent:"space-evenly"}}>
         <ul style={{ padding: "0px" }}>
+            <h5>Name</h5>
             {studentNames.map((studentName, index) => (
             <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
                 {studentName}
@@ -31,9 +36,26 @@ const StudentDetails = () => {
             ))}
         </ul>
         <ul style={{ padding: "0px" }}>
+            <h5>Email</h5>
             {studentMail.map((Mail, index) => (
             <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
                 {Mail}
+            </li>
+            ))}
+        </ul>
+        <ul style={{ padding: "0px" }}>
+            <h5>D.O.B</h5>
+            {studentDob.map((Dob, index) => (
+            <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
+                {Dob}
+            </li>
+            ))}
+        </ul>
+        <ul style={{ padding: "0px" }}>
+            <h5>Roll No.</h5>
+            {studentrollNo.map((rollNo, index) => (
+            <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
+                {rollNo}
             </li>
             ))}
         </ul>

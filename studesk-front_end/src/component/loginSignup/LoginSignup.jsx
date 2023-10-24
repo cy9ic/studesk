@@ -35,6 +35,14 @@ const LoginSignup = (props) => {
       setErrorMessage('Name is required');
       return;
     }
+    if(formData.email.trim()===''){
+      setErrorMessage('Email is required');
+      return;
+    }
+    if(formData.password.trim()===''){
+      setErrorMessage('Password is required');
+      return;
+    }
   
     try {
       const response = await axios.post('https://victorious-hare-beret.cyclic.app/user/create', formData);
@@ -77,7 +85,9 @@ const LoginSignup = (props) => {
       
     } catch (error) {
       console.error('Email or password not found', error);
-      setErrorMessage('User not found'); // Set the error message
+      setErrorMessage('User not found');
+      setTimeout(()=>{
+        setErrorMessage(null);},5000)
     }
   };
 
@@ -147,7 +157,7 @@ const LoginSignup = (props) => {
         )}
       </div>
 
-      {/* Display the error message */}
+      
       {errorMessage && (
       <h3 className="error-message">
         <span role="img" aria-label="Caution">⚠️</span> {errorMessage}
@@ -155,7 +165,7 @@ const LoginSignup = (props) => {
     )}
 
       <div className="submit-container">
-        <button type='button' className={action === 'Login' ? 'submit gray' : 'submit'} onClick={handleSignUp} disabled={!formData.name || !formData.email || !formData.password}>
+        <button type='button' className={action === 'Login' ? 'submit gray' : 'submit'} onClick={handleSignUp} >
           Sign Up
         </button>
         <button type='button' className={action === 'Sign Up' ? 'submit gray' : 'submit'} onClick={handleSignIn}>

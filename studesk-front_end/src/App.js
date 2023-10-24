@@ -51,7 +51,7 @@ const submittedData = (data)=>{
             }></Route>
             <Route path='/StudentDashboard'  element={<>
             <Navbar profile_url={noUser}/>
-            {role=="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard/>}
+            {role=="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard profile_url={noUser}/>}
             </>}/>
             <Route path='/uploadDocuments'  element={<>
               <Navbar profile_url={noUser}/>
