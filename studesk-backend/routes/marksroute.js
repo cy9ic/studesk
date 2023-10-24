@@ -28,8 +28,6 @@ import { getMarks , postMarks } from "../controllers/MarksController.js";
  *                 type: Number
  *               VES:
  *                 type: Number
- *               email:
- *                 type: Number
  *               PA:
  *                 type: Number
  *     responses:
