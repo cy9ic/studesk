@@ -33,21 +33,6 @@ app.use('/gatepass' , gprouter);
 app.use('/announcement' , announcementRouter);
 
 
-
-
-/**
- * @ 
- * /students:
- *   get:
- *      description : Get the json object containing all the students in the database
- *      responses :
- *        '200':
- *          description: Get the list of all the Students studying the college 
- *         
- *         */
-
-
-
 app.get("/cut" , (req , res )=>{
     res.send("Done");
 })
