@@ -47,7 +47,6 @@ const submittedData = (data)=>{
             }></Route>
             <Route path='/StudentDashboard'  element={<>
             <Navbar profile_url={noUser}/>
-
             {role=="student"?<StudentDashboard name="Harkaran" email={`${email}`} profile_url={noUser}/>:<FacultyDashboard/>}
             </>}/>
             <Route path='/uploadDocuments'  element={<>
@@ -58,15 +57,12 @@ const submittedData = (data)=>{
             <Route path='/gatePass'  element={
             <>
               <Navbar profile_url={noUser}/>
-               { GatePassSubmit ? <GatepassS  data={gatePassData}  /> : <GatePass func={gatePassSubmit} email={email}  data={submittedData} />}
+              {role=="faculty"?<FacultyGatePass email={email}></FacultyGatePass>:GatePassSubmit ? <GatepassS  data={gatePassData}  /> : <GatePass func={gatePassSubmit} email={email}  data={submittedData} />}
+               
             </>
             
             }></Route>
-            <Route path='FacultyGatePass' element={
-              <FacultyGatePass email={email}></FacultyGatePass>
-            }>
-
-            </Route>
+            
             <Route path='/GradeCard'  element={<>
               <Navbar profile_url={noUser}/>
               <GradeCard/>

@@ -2,10 +2,12 @@ import React,{useState} from 'react';
 import Faculty_Announcements from './Faculty_Announcements';
 import MarksManagement from './MarksManagement';
 import StudentList from './StudentList';
+import { useNavigate } from 'react-router-dom';
 
 
 const FacultyDashboard = (props) => {
     const email=props.email;
+    const history = useNavigate();
   return (
     <div className='container-fluid'>
         <div className='row border-top z-0 ' style={{ height: '15rem' ,backgroundColor: "#0d0c22"}}>
