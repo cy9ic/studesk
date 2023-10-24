@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import Faculty_Announcements from './Faculty_Announcements';
 import MarksManagement from './MarksManagement';
+import StudentList from './StudentList';
 
 
 const FacultyDashboard = (props) => {
@@ -62,6 +63,15 @@ const FacultyDashboard = (props) => {
           </div>
         
       </div>
+      <div className="row">
+        <div className="container mt-2 col-sm-12 col-lg-6">
+          <StudentList/>
+        </div>
+        <div className="container mt-2 col-sm-12 col-lg-6">
+          <h1>testing</h1>
+        </div>
+      </div>
+
 
     </div>
   )

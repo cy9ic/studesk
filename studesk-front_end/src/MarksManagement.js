@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import StudentMarks from "./StudentMarks";
 
+
 const MarksManagement = () => {
   const [studentId, setStudentId] = useState(1);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const MarksManagement = () => {
 
   return (
     <div>
-      <button onClick={openModal}>Add Student Marks</button>
+      <button onClick={openModal}>Add Marks</button>
       {modalIsOpen && <StudentMarks studentId={studentId} onClose={closeModal} />}
     </div>
   );
