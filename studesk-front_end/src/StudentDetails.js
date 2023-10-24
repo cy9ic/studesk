@@ -14,7 +14,7 @@ const StudentDetails = () => {
         const response = await axios.get("https://victorious-hare-beret.cyclic.app/Students");
         setStudentNames(response.data.map((student) => student.firstName + " " + student.lastName));
         setStudentMail(response.data.map((student) => student.email)); 
-        setStudentDob(response.data.map((student) => student.dateOfBirth || "2002-01-01")); 
+        setStudentDob(response.data.map((student) => student.dateOfBirth || "2002-01-01").map((dob)=>dob.substring(0,10))); 
         setStudentRollNo(response.data.map((student) => student.rollNo || "2110991879")); 
         setStudentClass(response.data.map((student) => student.class || "3A")); 
       } catch (error) {
@@ -46,7 +46,7 @@ const StudentDetails = () => {
             ))}
         </ul>
         <ul style={{ padding: "0px" }}>
-            <h5>D.O.B</h5>
+            <h5>D.O.B.</h5>
             {studentDob.map((Dob, index) => (
             <li key={index} style={{ display: "flex", marginBottom: "10px", justifyContent: "space-between", alignItems: "flex-end" }}>
                 {Dob}
