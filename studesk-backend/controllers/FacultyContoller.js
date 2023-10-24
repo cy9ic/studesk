@@ -1,5 +1,6 @@
 import Faculty from "../models/faculty.js";
 import Student from "../models/student.js";
+import User from "../models/user.js";
 
 //Get all the faculty
 export const getAllFaculty = async (req , res  )=>{
@@ -59,10 +60,15 @@ export const updateFacultyById = async (req , res)=>{
 
 export const delFacultyById = async (req , res)=>{
     try{
-        const delUser = await Faculty.findByIdAndDelete(req.params.id);
+        const delUser = await Faculty.findOne({email:req.body.email});
+        const user  = await User.findOne({email:req.body.email});
         if(!delUser){
-            return res.status(404).json("Student Not Found");
+            return res.status(404).json("Faculty Not Found");
+        }else if(!user){
+            return res.status(404).json("User Not Found");
         }
+        await User.deleteOne({email: req.body.email});
+        await Faculty.deleteOne({ email: req.body.email });
         res.json({message:"Faculty Deleted Succesfully"});
 
     }catch(error){

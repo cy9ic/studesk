@@ -1,4 +1,5 @@
 import Student from '../models/student.js';
+import User from '../models/user.js';
 
 // Get all students
 export const getAllStudents = async (req, res) => {
@@ -51,11 +52,17 @@ export const updateStudent = async (req, res) => {
 // Delete a student by ID
 export const deleteStudent = async (req, res) => {
     try {
-        const deletedStudent = await Student.findByIdAndDelete(req.params.id);
+        const deletedStudent = await Student.findOne({email : req.body.email});
+        const user = User.findOne({email:req.body.email});
         if (!deletedStudent) {
             return res.status(404).json({ message: 'Student not found' });
+        }else if(!user){
+            return res.status(404).json({ message: 'User not found' });
         }
-        res.json({ message: 'Student deleted successfully' });
+      await  Student.deleteOne({email:req.body.email});
+    await        User.deleteOne({email:req.body.email});
+
+        res.status(201).json({ message: 'Student deleted successfully' });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

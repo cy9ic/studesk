@@ -57,12 +57,28 @@ import { getAllFaculty  , delFacultyById , getFacultyById , updateFacultyById ,c
  *     responses:
  *       '200':
  *         description: Responds with the data of the specified faculty member
+ * /faculty/delete:
+ *   delete:
+  *     tags:
+ *       - FacultyData
+ *     description: Delete a faculty member by their id
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Responds with Faculty Deleted Successfully.
 */
 
 
 facultyRouter.post('/email' , getFacultyById)
 facultyRouter.post('/' , createFaculty);
-facultyRouter.delete('/:id' , delFacultyById);
-facultyRouter.put('/:id', updateFacultyById);
+facultyRouter.delete('/delete' , delFacultyById);
 facultyRouter.get('/' , getAllFaculty);
 export {facultyRouter}

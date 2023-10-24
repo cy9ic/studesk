@@ -57,12 +57,28 @@ import { getAllStudents , createStudent,getStudentById,updateStudent,deleteStude
  *     responses:
  *       '200':
  *         description: Responds with the data of students in the specified class
+ * /students/delete:
+ *   delete:
+ *     tags:
+ *       - StudentData
+ *     description: Deletes the student from the student database and the user database.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *     responses:
+ *       '201':
+ *         description: Responds with Student created deleted
  */
 
 
 studentsRouter.get('/', getAllStudents);
 studentsRouter.post('/', createStudent);
-studentsRouter.get('/:id', getStudentById);
-studentsRouter.put('/:id', updateStudent);
-studentsRouter.delete('/:id', deleteStudent);
+studentsRouter.get('/getByEmail', getStudentById);
+studentsRouter.delete('/delete', deleteStudent);
 export { studentsRouter };

@@ -25,6 +25,10 @@ import {MarksRouter} from "./routes/marksroute.js"
 import {gprouter}  from "./routes/gatepassroute.js"
 import announcementRouter from "./routes/announcementroute.js"
 
+// http://localhost:4000/announcement/getAllAnnouncement
+// http://localhost:4000/announcement/create
+// http://localhost:4000/marks/harkaran@gmail.com
+// http://localhost:4000/marks/ for posting
 
 
 app.use('/students', studentsRouter);
