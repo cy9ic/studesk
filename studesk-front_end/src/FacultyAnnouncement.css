@@ -4,8 +4,11 @@
   border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
-
+h2{
+  padding: 5px 10px;
+}
 .announcement-list {
   flex: 1;
   overflow-y: auto;

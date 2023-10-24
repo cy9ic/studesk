@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import Faculty_Announcements from './Faculty_Announcements';
+import MarksManagement from './MarksManagement';
+
 
 const FacultyDashboard = (props) => {
     const email=props.email;
@@ -52,15 +54,11 @@ const FacultyDashboard = (props) => {
 
       </div>
     <div className=' row'>
-        <div className=' container mt-2 col-sm-12 col-lg-4 ' >
+    <div className=' container mt-2 col-sm-12 col-lg-6 ' >
        <Faculty_Announcements/>
           </div>
-        <div className=' container mt-2 col-sm-12 col-lg-4 ' >
-        <Faculty_Announcements/>
-          </div>
-        
-        <div className=' container  mt-2 col-sm-12 col-lg-4 ' >
-        <Faculty_Announcements/>
+        <div className=' container mt-2 col-sm-12 col-lg-6 ' >
+        <MarksManagement/>
           </div>
         
       </div>
