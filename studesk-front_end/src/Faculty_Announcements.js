@@ -6,21 +6,20 @@ const Faculty_Announcements = () => {
   const [items, setItems] = useState([]);
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim() === '') {
       return;
     }
     try {
-      axios.post('https://victorious-hare-beret.cyclic.app/announcement/create', {
-        conten: "announcement add",class:"3A"
+      await axios.post('https://victorious-hare-beret.cyclic.app/announcement/create', {
+        content: "announcement add",class:"3A"
       });
       console.log('Announcement successfully added!');
     } catch (error) {
       console.error(error);
     }
     setItems([...items, input]);
-    setInput('');
   };
 
 
