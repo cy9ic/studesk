@@ -11,6 +11,7 @@ const Announcements = () => {
     axios
       .get('https://victorious-hare-beret.cyclic.app/announcement/getAllAnnouncement')
       .then((response) => {
+        console.log(response.data);
         setAnnouncements(response.data);
       })
       .catch((err) => {

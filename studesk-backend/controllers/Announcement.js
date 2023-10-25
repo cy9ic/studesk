@@ -6,7 +6,7 @@ export const createAnnouncement =async (req , res)=>{
 
     try{
         const newAnnouncement = await announcement.save();
-
+        res.json({data:newAnnouncement , message:"Announcement successfully added"});
     }catch(error){
         res.status(501).json({message:"Internal server error"} , error);
     }

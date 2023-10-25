@@ -5,21 +5,21 @@ const Faculty_Announcements = () => {
   const [input, setInput] = useState('');
   const [items, setItems] = useState([]);
   
-
+  
   const handleSubmit = async (e) => {
+    setItems([...items, input]);
     e.preventDefault();
     if (input.trim() === '') {
       return;
     }
     try {
       await axios.post('https://victorious-hare-beret.cyclic.app/announcement/create', {
-        content: "announcement add",class:"3A"
+        content: input,class:"3A"
       });
       console.log('Announcement successfully added!');
     } catch (error) {
       console.error(error);
     }
-    setItems([...items, input]);
   };
 
 
