@@ -12,7 +12,7 @@ export default function Documentation() {
     <div className='temp'>
 
     <button className='doc-btn' onClick={()=>{
-        window.location.href="http://localhost:4000/docs/";
+        window.location.href="https://victorious-hare-beret.cyclic.app/docs/";
     }} >API Documentation</button>
     <button className='doc-btn'>Backend Documentation</button>
     <button className='doc-btn'>Front-end Documentation</button>
