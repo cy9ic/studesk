@@ -9,7 +9,7 @@ const options =  swaggerJSDoc.Options =
             title:"Studesk Api",
             description:"Api made for studesk (2023 Full Stack project G-11 - Chitkara University)",
             contact:{
-                name:"Harkaran",
+                name:"Harkaran & Ravish Madaan",
                 email:"harkaran0010@gmail.com"
             },
             servers:["http://localhost:4000","https://victorious-hare-beret.cyclic.app"]
